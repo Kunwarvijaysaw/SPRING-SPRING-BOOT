@@ -1,6 +1,6 @@
-package com.amit.sbeans;
+package com.kvs.sbeans;
 
-import java.time.LocalDate;
+
 import java.time.LocalTime;
 
 public class WishMessageGenerator {
