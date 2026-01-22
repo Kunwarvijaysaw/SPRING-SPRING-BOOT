@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- LocalDate bean -->
+    <bean id="ldate" class="java.time.LocalDate" factory-method="now"/>
+
+    <!-- DiscountCalculate bean -->
+    <bean id="discountCalculate"
+          class="com.kvs.sbeans.DiscountCalculate">
+        <property name="localDate" ref="ldate"/>
+        <property name="price" value="1000"/>
+    </bean>
+
+</beans>
