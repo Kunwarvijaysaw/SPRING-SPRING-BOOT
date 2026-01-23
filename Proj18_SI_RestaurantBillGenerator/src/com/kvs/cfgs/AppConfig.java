@@ -10,14 +10,14 @@ import com.kvs.sbeans.RestaurantBillGenerator;
 @ComponentScan(basePackages = "com.kvs.sbeans")
 public class AppConfig {
 
-	@Bean("rbg")
+	@Bean("rObj")
 	public RestaurantBillGenerator getRestaurantBillGenerator()
 	{
 		RestaurantBillGenerator rbg = new RestaurantBillGenerator();
-		rbg.setDrinksAmount(200);
-		rbg.setFoodAmount(800);
-		rbg.setServiceCharge(50);
-		rbg.setGstPercentage(18);
+//		rbg.setDrinksAmount(200);
+//		rbg.setFoodAmount(800);
+//		rbg.setServiceCharge(50);
+//		rbg.setGstPercentage(18);
 		return rbg;
 	}
 
