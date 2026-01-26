@@ -1,9 +1,13 @@
 package com.kvs.sbeans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MeterReading {
 	
 	private int unitsConsumed;
 	private int costPerUnit;
+	
 	public int getUnitsConsumed() {
 		return unitsConsumed;
 	}
@@ -17,9 +21,4 @@ public class MeterReading {
 		this.costPerUnit = costPerUnit;
 	}
 	
-	
-	
-	
-
-
 }
