@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.nit.sbean.TicketBillCalculator;
 import com.nit.sbean.TicketDetails;
 
 @Configuration
@@ -14,5 +15,10 @@ public class AppConfig {
 	public TicketDetails getDetails()
 	{
 		return new TicketDetails(200, 3, 10);
+	}
+	@Bean
+	public TicketBillCalculator getBillCalculator()
+	{
+		return new TicketBillCalculator(getDetails());
 	}
 }
