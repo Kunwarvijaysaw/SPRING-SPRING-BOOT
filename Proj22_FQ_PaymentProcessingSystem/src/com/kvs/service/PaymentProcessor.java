@@ -9,7 +9,7 @@ public class PaymentProcessor {
 
 	
 	
-	private PaymentService service;
+	private PaymentService service;//has a relation
 	
 	
 	@Autowired
