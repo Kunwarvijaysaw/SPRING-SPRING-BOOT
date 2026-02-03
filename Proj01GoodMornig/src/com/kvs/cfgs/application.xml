@@ -6,13 +6,9 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="time"
-          class="java.time.LocalTime"
-          factory-method="now"/>
+    <bean id="time" class="java.time.LocalTime" factory-method="now"/>
 
-    <bean id="wmg"
-          class="com.kvs.sbeans.WishMessageGenerator">
-        <property name="time" ref="time"/>
+    <bean id="wmg" class="com.kvs.sbeans.WishMessageGenerator"> <property name="time" ref="time"/>
     </bean>
 
 </beans>

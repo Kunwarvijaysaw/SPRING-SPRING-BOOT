@@ -54,10 +54,10 @@ import com.kvs.sbeans.TravelPackageCostCalculator;
 public class TravelPackageCostCalculatorMain {
 
 	public static void main(String[] args) {
-AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-TravelPackageCostCalculator calculatorMain = ctx.getBean(TravelPackageCostCalculator.class);
-double calculateFinalPackageCost = calculatorMain.calculateFinalPackageCost();
-System.out.println(calculateFinalPackageCost);
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		TravelPackageCostCalculator calculatorMain = ctx.getBean(TravelPackageCostCalculator.class);
+		double calculateFinalPackageCost = calculatorMain.calculateFinalPackageCost();
+		System.out.println(calculateFinalPackageCost);
 	}
 
 }
