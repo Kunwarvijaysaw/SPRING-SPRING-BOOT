@@ -12,7 +12,18 @@ import com.kvs.sbeans.RegularCustomerDiscount;
 @Configuration
 @ComponentScan(basePackages = "com.kvs")
 public class AppConfig {
-
+	@Bean("regular")
+	public RegularCustomerDiscount getRegularCustomerDiscount() {
+		return new  RegularCustomerDiscount();
+	}
+	@Bean("premium")
+	public PremiumCustomerDiscount getPremiumCustomerDiscount() {
+		return new PremiumCustomerDiscount();
+	}
+	@Bean("elite")
+	public EliteCustomerDiscount getEliteCustomerDiscount() {
+		return new  EliteCustomerDiscount();
+	}
 
 
 } 

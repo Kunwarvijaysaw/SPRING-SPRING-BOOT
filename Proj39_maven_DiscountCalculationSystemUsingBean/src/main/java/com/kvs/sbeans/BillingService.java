@@ -7,10 +7,15 @@ import org.springframework.stereotype.Component;
 public class BillingService {
 	
 	@Autowired
-	@Qualifier("reg")
+//	@Qualifier("reg")
 	DiscountStrategy discountStrategy;
 	
 	
+	public void setDiscountStrategy(DiscountStrategy discountStrategy) {
+		this.discountStrategy = discountStrategy;
+	}
+
+
 	public void generateBill(double amount){
 		double calculateDiscount = discountStrategy.calculateDiscount(amount);
 		System.out.println("Original Amount: ₹ "+amount);
