@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kvs</groupId>
-  <artifactId>Proj44_Multi-LanguageLoginMessages</artifactId>
+  <artifactId>Proj46_propertiesSource_DynamicDiscountCalculatorForE-Commerce</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Proj44_Multi-LanguageLoginMessages</name>
+  <name>Proj46_propertiesSource_DynamicDiscountCalculatorForE-Commerce</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,7 +15,7 @@
   </properties>
 
   <dependencies>
-  <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+   <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context-support</artifactId>
