@@ -30,7 +30,7 @@ public class StudentDao {
 		if(k>0)
 			return "Student Saved With id:"+student.getId();
 		else
-			return "Invalid Input";
+			return "Invalid Input ";
 	}
 	public List<Student> findAll() throws SQLException
 	{
@@ -44,8 +44,12 @@ public class StudentDao {
 		}
 		return listOfStudents;
 	}
-	public double calculateAvgMarks()
+	public double calculateAvgMarks() throws SQLException
 	{
+		List<Student> listOfStudents=new ArrayList<Student>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement("SELECT AVG(marks) FROM students50");
+		ResultSet rs = pstmt.executeQuery();
 		return 0.0;
 	}
 }

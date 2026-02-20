@@ -26,6 +26,8 @@ public class StudentGradeManagementSystemApplication {
 		   System.out.println(sc.addStudent(stu));
 		   List<Student> viewAllStudent = sc.viewAllStudent();
 		   viewAllStudent.forEach(System.out::println);
+		   System.out.println("Average : "+sc.showAvgMarks());
+		   
 	   }
 	   catch (Exception e) {
 		e.printStackTrace();

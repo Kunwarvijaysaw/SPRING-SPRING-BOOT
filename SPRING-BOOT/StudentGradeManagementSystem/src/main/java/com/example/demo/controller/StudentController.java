@@ -27,8 +27,15 @@ public class StudentController {
 		return allStudent;
 	}
 	//Show average marks
-	public double showAvgMarks()
+	public double showAvgMarks() throws SQLException
 	{
-		return 0.0;
+		double sum=0;
+		List<Student> list=service.getAllStudent();
+		
+		for (Student s : list) {
+	        sum += s.getMarks();   // assuming getter method
+	    }
+
+	    return sum / list.size();
 	}
 }
