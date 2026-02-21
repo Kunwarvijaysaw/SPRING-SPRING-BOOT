@@ -47,9 +47,13 @@ public class StudentDao {
 	public double calculateAvgMarks() throws SQLException
 	{
 		List<Student> listOfStudents=new ArrayList<Student>();
+		double avg =  0.0;
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement("SELECT AVG(marks) FROM students50");
 		ResultSet rs = pstmt.executeQuery();
-		return 0.0;
+		while(rs.next()) {
+			avg = rs.getDouble(1);
+		}
+		return  avg;
 	}
 }

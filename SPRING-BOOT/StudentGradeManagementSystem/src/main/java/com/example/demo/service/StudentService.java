@@ -22,8 +22,17 @@ public class StudentService {
 	{
 		return studentDao.findAll();
 	}
-	public double calAvgMarks()
+	public double calAvgMarks() throws SQLException
 	{
-		return 0.0;
+		return studentDao.calculateAvgMarks();
+	}
+	public long callUpdate() {
+		return 0;
+		
+	}
+	public boolean callDelete() {
+		return false;
+		
+		
 	}
 }

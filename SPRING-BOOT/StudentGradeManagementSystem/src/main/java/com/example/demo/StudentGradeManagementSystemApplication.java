@@ -23,10 +23,10 @@ public class StudentGradeManagementSystemApplication {
 	    Student stu = run.getBean(Student.class);
 	   StudentController sc = run.getBean(StudentController.class);
 	   try{
-		   System.out.println(sc.addStudent(stu));
-		   List<Student> viewAllStudent = sc.viewAllStudent();
-		   viewAllStudent.forEach(System.out::println);
-		   System.out.println("Average : "+sc.showAvgMarks());
+//		   System.out.println(sc.addStudent(stu));
+//		   List<Student> viewAllStudent = sc.viewAllStudent();
+//		   viewAllStudent.forEach(System.out::println);
+		   System.out.printf("Average : %.2f\n",sc.showAvgMarks());
 		   
 	   }
 	   catch (Exception e) {
