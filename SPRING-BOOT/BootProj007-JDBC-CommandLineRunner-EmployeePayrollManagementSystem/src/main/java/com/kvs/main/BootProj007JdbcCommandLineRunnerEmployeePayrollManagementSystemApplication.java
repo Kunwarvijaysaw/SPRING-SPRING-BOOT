@@ -3,24 +3,32 @@ package com.kvs.main;
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.kvs.main.controller.StudentController;
-import com.kvs.main.entiry.Student;
+
+import com.kvs.main.model.Employee;
+import com.kvs.main.service.EmployeeService;
 
 @SpringBootApplication
-public class SgmsApplication {
+public class BootProj007JdbcCommandLineRunnerEmployeePayrollManagementSystemApplication implements CommandLineRunner {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(BootProj007JdbcCommandLineRunnerEmployeePayrollManagementSystemApplication.class, args);
+	}
 
-        ConfigurableApplicationContext context =
-                SpringApplication.run(SgmsApplication.class, args);
+	@Autowired
+	private EmployeeService employeeService;
 
-        StudentController sc = context.getBean(StudentController.class);
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
 
-        Scanner scanner = new Scanner(System.in);
+		 
+		Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
@@ -53,18 +61,22 @@ public class SgmsApplication {
 
                         System.out.print("Enter Salary: ");
                         double salary = scanner.nextDouble();
+                        
+                        scanner.nextLine();
+                        System.out.print("Enter Role: ");
+                        String role = scanner.nextLine();
 
                         System.out.println(
-                                sc.addStudent(new Student(id, name, dept, salary))
+                        		employeeService.insertEmployee(new Employee(id, name, dept, salary,role))
                         );
                         break;
 
                     case 2:
-                        List<Student> students = sc.viewAllStudent();
-                        if (students.isEmpty()) {
+                        List<Employee> employees = employeeService.getAllEmployee();
+                        if (employees.isEmpty()) {
                             System.out.println("No Records Found.");
                         } else {
-                            students.forEach(System.out::println);
+                            employees.forEach(System.out::println);
                         }
                         break;
 
@@ -73,10 +85,10 @@ public class SgmsApplication {
                         long updateId = scanner.nextLong();
 
                         System.out.print("Enter New Salary: ");
-                        double newMarks = scanner.nextDouble();
+                        double newSalary = scanner.nextDouble();
 
                         System.out.println(
-                                sc.updateStudent(updateId, newMarks)
+                        		employeeService.updateEmployee(updateId, newSalary)
                         );
                         break;
 
@@ -85,7 +97,7 @@ public class SgmsApplication {
                         long deleteId = scanner.nextLong();
 
                         System.out.println(
-                                sc.deleteStudent(deleteId)
+                        		employeeService.deleteEmployee(deleteId)
                         );
                         break;
 
@@ -106,7 +118,7 @@ public class SgmsApplication {
         }
 
         scanner.close();
-        context.close();
+//        context.close();
         System.out.println("Application Closed Successfully.");
     }
 }

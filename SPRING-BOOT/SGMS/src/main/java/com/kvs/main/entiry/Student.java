@@ -9,7 +9,7 @@ public class Student {
 	
 	private long id;
 	private String name;
-	private String subject;
-	private double marks;
+	private String dept;
+	private double salary;
 
 }

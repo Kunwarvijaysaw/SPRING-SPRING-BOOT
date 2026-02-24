@@ -26,8 +26,8 @@ public class StudentController {
     }
 
     // UPDATE
-    public String updateStudent(long id, double marks) throws SQLException {
-        return service.updateStudent(id, marks);
+    public String updateStudent(long id, double salary) throws SQLException {
+        return service.updateStudent(id, salary);
     }
 
     // DELETE
@@ -35,8 +35,5 @@ public class StudentController {
         return service.deleteStudent(id);
     }
 
-    // AVERAGE
-//    public double showAvgMarks() throws SQLException {
-//        return service.calAvgMarks();
-//    }
+
 }

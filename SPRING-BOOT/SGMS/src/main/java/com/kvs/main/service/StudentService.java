@@ -23,13 +23,11 @@ public class StudentService {
         return studentDao.findAll();
     }
 
-//    public double calAvgMarks() throws SQLException {
-//        return studentDao.calculateAvgMarks();
-//    }
+
 
     // UPDATE
-    public String updateStudent(long id, double marks) throws SQLException {
-        return studentDao.updateStudent(id, marks);
+    public String updateStudent(long id, double salary) throws SQLException {
+        return studentDao.updateStudent(id, salary);
     }
 
     // DELETE
