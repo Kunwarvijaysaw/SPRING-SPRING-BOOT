@@ -118,7 +118,6 @@ public class BootProj007JdbcCommandLineRunnerEmployeePayrollManagementSystemAppl
         }
 
         scanner.close();
-//        context.close();
         System.out.println("Application Closed Successfully.");
     }
 }
