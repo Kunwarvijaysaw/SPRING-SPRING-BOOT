@@ -19,12 +19,9 @@ public class StudentDAO
 	public void insert(Student stu) throws SQLException
 	{
 		Connection connection = dt.getConnection(null, null);
-		connection.prepareCall("insert into student values("+stu.getName()+);
+	
 		
 	}
-	public ArrayList<Student> getAllStuent()
-	{
-		
-		jdbc.
-	}
+
+	
 }
