@@ -4,15 +4,18 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.kvs.main.controller.TravelController;
 import com.kvs.main.entity.Travel;
 import com.kvs.main.repository.TravelRepository;
 
 @Service
 public class TravelService implements ITravelService {
+
 	
 	@Autowired
 	TravelRepository travelRepository;
+
+    
 	
 	@Override
 	public void addTravel(Travel travel) {
@@ -39,8 +42,13 @@ public class TravelService implements ITravelService {
 
 	@Override
 	public void deleteTravelById(Long id) {
+		Optional<Travel> byId = travelRepository.findById(id);
+		if(byId.isPresent()) {
 		travelRepository.deleteById(id);
-		
+		System.out.println("Data Deleted Sucessfully!!!");
+		}else {
+			System.out.println("Data Not Found!!!");
+		}
 	}
 
 	@Override

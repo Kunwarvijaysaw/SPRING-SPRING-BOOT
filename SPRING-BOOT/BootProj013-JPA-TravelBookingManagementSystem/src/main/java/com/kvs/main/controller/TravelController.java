@@ -30,16 +30,25 @@ public class TravelController {
 	}
 	//: Deletes a travel booking by ID.
 	public void deleteTravelById(Long id){
+		
 		iTravelService.deleteTravelById(id);
+		
+	
+		
 	}
 	
 	//: Checks if a travel booking exists.
 	public void checkIfTravelExists(Long id){
-		iTravelService.existsById(id);
+		boolean existsById = iTravelService.existsById(id);
+		if(existsById) {
+			System.out.println("True");
+		}else {
+			System.out.println("false");
+		}
 	}
 	//: Retrieves the total number of travel bookings.
 	public void countTravels(){
-		iTravelService.count();
+		System.out.println(iTravelService.count());
 	}
 	
 	//: Deletes a specific travel booking.
