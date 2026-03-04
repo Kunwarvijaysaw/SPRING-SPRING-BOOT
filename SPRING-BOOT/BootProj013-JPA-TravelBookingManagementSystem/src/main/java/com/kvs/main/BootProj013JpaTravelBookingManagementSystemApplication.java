@@ -13,11 +13,9 @@ import com.kvs.main.entity.Travel;
 @SpringBootApplication
 public class BootProj013JpaTravelBookingManagementSystemApplication implements CommandLineRunner {
 
-    private final TravelRepository travelRepository;
+    private  TravelRepository travelRepository;
 
-    BootProj013JpaTravelBookingManagementSystemApplication(TravelRepository travelRepository) {
-        this.travelRepository = travelRepository;
-    }
+   
 
 	public static void main(String[] args) {
 		SpringApplication.run(BootProj013JpaTravelBookingManagementSystemApplication.class, args);
