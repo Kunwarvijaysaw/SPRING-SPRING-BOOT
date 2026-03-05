@@ -2,10 +2,9 @@ package com.kvs.main;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import com.kvs.main.repository.CourseRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,22 +13,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.kvs.main.controller.CourseController;
 import com.kvs.main.entity.Course;
 
-
 @SpringBootApplication
-public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements CommandLineRunner {
-    
-//	@Autowired
-//    private CourseRepository courseRepository;
-
-    
+public class CourseSystemJpaCrudOperationApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootProj014JpaCrudCourseEnrollmentSystemApplication.class, args);
+		SpringApplication.run(CourseSystemJpaCrudOperationApplication.class, args);
 	}
 	
 	@Autowired
-	private CourseController courseController;
-
+	CourseController courseController;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
@@ -37,7 +30,7 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
 
         while (running) {
 
-            System.out.println("\n===== Travel Menu =====");
+            System.out.println("\n===== Course Menu =====");
             System.out.println("1. Insert one course.");
             System.out.println("2. Insert multiple courses.");
             System.out.println("3. Find course by ID.");
@@ -51,8 +44,8 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
             System.out.println("11. Delete multiple by entity list.  ");
             System.out.println("12. Delete all Course.");
             System.out.println("13. Exit");
+            
             System.out.print("Enter Choice: ");
-
             int choice = scanner.nextInt();
 
             try {
@@ -90,7 +83,7 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
                         
 
                         
-                        		courseController.addCourse(new Course(id, courseName, trainerName, duration, fee, sDate));
+                        courseController.addCourse(new Course(id, courseName, trainerName, duration, fee, sDate));
                        
                         break;
                     case 2:
