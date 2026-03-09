@@ -18,10 +18,6 @@ import com.kvs.main.entity.Course;
 @SpringBootApplication
 public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements CommandLineRunner {
     
-//	@Autowired
-//    private CourseRepository courseRepository;
-
-    
 
 	public static void main(String[] args) {
 		SpringApplication.run(BootProj014JpaCrudCourseEnrollmentSystemApplication.class, args);
@@ -76,21 +72,12 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
                         System.out.print("Enter Fee: ");
                         Double fee = scanner.nextDouble();
                         
-                        System.out.print("Enter Year ");
-                        int years=scanner.nextInt();
-                        System.out.print("Enter month ");
-                        int months=scanner.nextInt();
-                        System.out.print("Enter month of date ");
-                        int days=scanner.nextInt();
-                        
-                        
-                        LocalDate sDate = LocalDate.of(years, months, days);
-                        
+
                         
                         
 
                         
-                        		courseController.addCourse(new Course(id, courseName, trainerName, duration, fee, sDate));
+                        		courseController.addCourse(new Course(id, courseName, trainerName, duration, fee));
                        
                         break;
                     case 2:
@@ -121,18 +108,9 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
                             System.out.print("Enter Fee: ");
                             Double fee1 = scanner.nextDouble();
 
-                            System.out.print("Enter Year: ");
-                            int year = scanner.nextInt();
 
-                            System.out.print("Enter Month: ");
-                            int month = scanner.nextInt();
 
-                            System.out.print("Enter Day: ");
-                            int day = scanner.nextInt();
-
-                            LocalDate startDate = LocalDate.of(year, month, day);
-
-                            Course course = new Course(id1,courseName1, trainerName1, duration1, fee1, startDate);
+                            Course course = new Course(id1,courseName1, trainerName1, duration1, fee1);
 
                             courses.add(course);
                         }
@@ -212,19 +190,10 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
                         System.out.print("Enter Fee: ");
                         Double fee2 = scanner.nextDouble();
 
-                        System.out.print("Enter Year: ");
-                        int y2 = scanner.nextInt();
 
-                        System.out.print("Enter Month: ");
-                        int m2 = scanner.nextInt();
-
-                        System.out.print("Enter Day: ");
-                        int d2 = scanner.nextInt();
-
-                        LocalDate date2 = LocalDate.of(y2,m2,d2);
 
                         courseController.delete(
-                            new Course(id2,cname,tname,dur,fee2,date2)
+                            new Course(id2,cname,tname,dur,fee2)
                         );
 
                         System.out.println("Course Deleted Using Entity");
@@ -278,18 +247,8 @@ public class BootProj014JpaCrudCourseEnrollmentSystemApplication implements Comm
                             System.out.print("Enter Fee: ");
                             Double fe = scanner.nextDouble();
 
-                            System.out.print("Enter Year: ");
-                            int yy = scanner.nextInt();
 
-                            System.out.print("Enter Month: ");
-                            int mm = scanner.nextInt();
-
-                            System.out.print("Enter Day: ");
-                            int dd = scanner.nextInt();
-
-                            LocalDate dt = LocalDate.of(yy,mm,dd);
-
-                            delCourses.add(new Course(cid,cn,tn,du,fe,dt));
+                            delCourses.add(new Course(cid,cn,tn,du,fe));
                         }
 
                         courseController.deleteMultipleByEntity(delCourses);
