@@ -21,12 +21,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 	List<Employee> findBySalaryGreaterThan(Double salary) ;//→ Get employees with salary above threshold.
 
 	 @Modifying
-	    
-	    @Query("update Employee e set e.salary = :salary where e.id = :id")
-	    int updateSalaryById(Long id, Double salary);
+	 @Query("update Employee e set e.salary = :salary where e.id = :id")
+	 int updateSalaryById(Long id, Double salary);
 	 
 	@Modifying
-	
 	@Query("delete from Employee e where e.name = :name")
 	int deleteByName(String name);// → Delete employee by name. (Requires @Transactional in service)
 
