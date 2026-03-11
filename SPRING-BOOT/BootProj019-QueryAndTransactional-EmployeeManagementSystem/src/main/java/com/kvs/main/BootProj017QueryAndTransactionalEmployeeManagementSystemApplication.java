@@ -36,7 +36,7 @@ public class BootProj017QueryAndTransactionalEmployeeManagementSystemApplication
 	            System.out.println("7. Exit");
 
 	            System.out.print("Enter Choice: ");
-	            int choice = Integer.parseInt(sc.nextLine());
+	            int choice = sc.nextInt();
 
 	            switch(choice) {
 
@@ -79,10 +79,10 @@ public class BootProj017QueryAndTransactionalEmployeeManagementSystemApplication
 
 	            case 5:
 	                System.out.print("Enter Employee ID: ");
-	                Long id1 = Long.parseLong(sc.nextLine());
+	                Long id1 = sc.nextLong();
 
 	                System.out.print("Enter New Salary: ");
-	                Double newSalary = Double.parseDouble(sc.nextLine());
+	                Double newSalary = sc.nextDouble();
 
 	                service.updateSalary(id1, newSalary);
 	                System.out.println("Salary Updated");
@@ -90,7 +90,7 @@ public class BootProj017QueryAndTransactionalEmployeeManagementSystemApplication
 
 	            case 6:
 	                System.out.print("Enter Employee Name: ");
-	                String n = sc.nextLine();
+	                String n = sc.next();
 
 	                service.deleteByName(n);
 	                System.out.println("Employee Deleted");

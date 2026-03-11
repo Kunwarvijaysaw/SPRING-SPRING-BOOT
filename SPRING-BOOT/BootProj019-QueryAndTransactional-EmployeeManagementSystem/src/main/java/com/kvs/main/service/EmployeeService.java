@@ -38,13 +38,13 @@ public  class EmployeeService {
     }
 
     // Update salary
-
+    @Transactional
     public void updateSalary(Long id, Double salary) {
         repo.updateSalaryById(id, salary);
     }
 
     // Delete by name
-   
+    @Transactional
     public void deleteByName(String name) {
         repo.deleteByName(name);
     }
