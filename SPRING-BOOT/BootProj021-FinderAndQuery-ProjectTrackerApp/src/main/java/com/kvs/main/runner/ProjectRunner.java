@@ -127,6 +127,20 @@ public class ProjectRunner implements CommandLineRunner{
 			        projectRepository.findByClientNameStartingWith(nameOfFirstLatter).forEach(System.out::println);
 			        break;
 			        
+				case 9:
+					System.out.println("Enter word to check itcontains project name ");
+					sc.nextLine();
+					String nameContains=sc.nextLine();
+					projectRepository.findByProjectNameContainingIgnoreCase(nameContains).forEach(System.out::println);
+					break;
+					
+				case 10:
+					projectRepository.findTop3ByOrderByBudgetDesc().forEach(System.out::println);
+					break;
+					
+				case 11:
+					System.out.println("Program Sucessfully exit.......");
+					System.exit(0);
 				}
 			}
 			
