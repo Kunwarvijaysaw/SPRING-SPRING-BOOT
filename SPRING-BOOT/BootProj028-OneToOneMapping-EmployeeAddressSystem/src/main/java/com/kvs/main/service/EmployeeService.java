@@ -24,11 +24,5 @@ public class EmployeeService implements IEmployeeService {
 		return empRepo.findById(id);
 	}
 
-	
-
-
-	
-
-	
 
 }
