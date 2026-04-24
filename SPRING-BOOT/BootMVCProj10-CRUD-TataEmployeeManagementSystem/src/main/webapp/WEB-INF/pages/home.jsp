@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>Employee Management System</h2>
-<a href="/empview">View Employees</a> |
+<a href="/empview">View Employees</a> 
+<a href="/addEmp">Add Employee</a>|
 </body>
 </html>
