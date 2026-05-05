@@ -42,6 +42,7 @@ public class EmployeeService implements IEmployeeService {
 			byId.setDept(e.getDept());
 			byId.setName(e.getName());
 			byId.setSalary(e.getSalary());
+			empRepo.save(byId);
 			return "Employee Updated Succesfully";
 		}
 
