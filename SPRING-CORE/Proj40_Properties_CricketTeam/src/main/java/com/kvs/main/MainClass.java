@@ -7,7 +7,7 @@ import com.kvs.service.Player;
 
 public class MainClass {
 public static void main(String[] args) {
-	 AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(AppConfig.class);
+	 AnnotationConfigApplicationContext ctx =new AnnotationConfigApplicationContext(AppConfig.class);
 	 Player player=ctx.getBean(Player.class);
 	 System.out.println(player);
 }
